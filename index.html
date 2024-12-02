@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script defer src="./js/app.js"></script>
+</head>
+<body>
+
+
+    <!-- Cover Screen -->
+    <div id="game-cover">
+        <img id="game-cover-bg" src="./images/hangman cover.png" alt="Game Cover - The Shambles Cemetery illustration">
+         <button id="play-button"><span>PLAY</span></button>
+    </div>
+    <!-- Audio -->
+    <section id="bg-audio">
+    <audio id="bg-audio-wind" autoplay loop>
+        <source src="./audio/spooky-wind-70657.mp3">
+    </audio>
+    <audio id="bg-audio-crow" autoplay loop>
+        <source src="./audio/crow-39377.mp3">
+    </audio>
+    </section>
+
+
+    <!-- Game Section -->
+    <div id="game">
+
+    <div>
+    <img id="background" src="./images/hangman background_final.png" alt="spooky cemetry illustration">
+    <title>The Shambles cemetery</title>
+        <h2 id="message">Guess the Mystery Word</h2>
+    </div>
+    
+    <img id="hangman-template" src="./images/hangman background_final.png" alt="spooky Cemetry illustration">
+
+    <!-- underscore -->
+    <div class="blanks">
+        <p class="word-display"></p>
+    </div>
+
+    <!-- keyboard -->
+    <div class="container">
+    <section class="letters">
+        <button id="letter-A">A</button>
+        <button id="letter-B">B</button>
+        <button id="letter-C">C</button>
+        <button id="letter-D">D</button>
+        <button id="letter-E">E</button>
+        <button id="letter-F">F</button>
+        <button id="letter-G">G</button>
+        <button id="letter-H">H</button>
+        <button id="letter-I">I</button>
+        <button id="letter-J">J</button>
+        <button id="letter-K">K</button>
+        <button id="letter-L">L</button>
+        <button id="letter-M">M</button>
+        <button id="letter-N">N</button>
+        <button id="letter-O">O</button>
+        <button id="letter-P">P</button>
+        <button id="letter-Q">Q</button>
+        <button id="letter-R">R</button>
+        <button id="letter-S">S</button>
+        <button id="letter-T">T</button>
+        <button id="letter-U">U</button>
+        <button id="letter-V">V</button>
+        <button id="letter-W">W</button>
+        <button id="letter-X">X</button>
+        <button id="letter-Y">Y</button>
+        <button id="letter-Z">Z</button>
+    </section>
+    </div>
+    <button id="reset-button">Play Again</button>
+</div>
+</body>
+</html>

@@ -1,0 +1,198 @@
+body {
+    justify-content: center;
+    background-color: #442775;
+    font-family: 'Made Tommy', sans-serif;
+}
+
+
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    height: 100vh; 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    z-index: -1; 
+}
+
+#game-cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: -1; 
+}
+
+
+#game-cover-bg {
+    position: absolute;
+    width: 100vw; 
+    height: 100vh; 
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+
+#play-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2; 
+    width: 150px; 
+    margin-bottom: -570px;
+    background-color: #a8b527;
+    color: white;
+    border: none;
+    width: 150px;
+    height: 100px;
+    border-radius: 100px;
+    font-family: 'Buttery';
+    font-size: 40px;
+    transform: rotate(-7deg);
+    clip-path: ellipse(60% 50% at 60% 60%);
+    align-content: center;
+}
+
+
+#play-button span {
+    transform: rotate(-5deg);
+}
+
+
+#play-button:hover {
+    background-color: #f67e27;
+    transition: 0.5s;
+}
+
+
+#message {
+    top: 50%;
+    left: 50%;
+    font-weight: regular;
+    text-align: center;
+    font-size: 21px;
+    color: #f67e27; 
+    padding-top: 200px;
+}
+
+
+.word-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: -10px;
+    margin-top: -300px;
+    color: white;
+    padding-top: 170px;
+    flex-direction: row;
+}
+
+
+.word-display li {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    line-height: 1;
+    letter-spacing: normal;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    margin-top: -35px;
+}
+
+
+.letters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-top: 160px;
+    width: calc(9 * 60px + 2 * 20px);
+}
+
+
+.letters button { 
+    width: 45px;
+    height: 45px;
+    font-size: 25px;
+    color: white;
+    background-color: #f67e27;
+    border-radius: 20%;
+    border: none;
+    text-align: center;
+}
+
+
+button:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+
+.letters button:hover {
+    color: #f67e27;
+    background-color: #fcebd9;
+    transition: 0.3s;
+}
+ 
+
+#hangman-template {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    height: 100vh; 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    z-index: -1; 
+}
+
+#reset-button {
+    background-color: #a8b527;
+    color: white;
+    font-family: 'Made Tommy', sans-serif;
+    font-size: 16px;
+    width: 130px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    position: absolute;
+    top: 87%;
+    left: 46%;
+}
+
+#reset-button:hover {
+    color: #a8b527;
+    background-color: white;
+    transition: 0.3s;
+}
+
+#reset-button:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+#game-cover {
+    display: flex;
+}
+
+#game {
+    display: none;
+}
