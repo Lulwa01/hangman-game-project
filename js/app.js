@@ -123,7 +123,7 @@ function updateGameStatus() {
     const allLettersGuessed = seperateLetters.every(letter => guessedLetters.includes(letter))
     if (allLettersGuessed){
         winner = true
-        messageEl.innerHTML = 'You guessed it right! You win and coffin is unlocked!'
+        messageEl.innerHTML = 'You won! The Alchemist coffin is still unlocked!'
         resetBtn.disabled = false
         let winAudio = new Audio()
         winAudio.src = './audio/spooky-gongwav-14904.mp3'
@@ -132,7 +132,7 @@ function updateGameStatus() {
     }
     if (remainingGuesses === 0) {
         winner = false
-        messageEl.innerHTML = `Game Over! You lose, it was <span style="color: #a8b527;">(${currentWord})</span>`
+        messageEl.innerHTML = `You lost! You freed The Alchemist from his coffin! It was <span style="color: #a8b527;">(${currentWord})</span>`
         resetBtn.disabled = false
     }
 }
