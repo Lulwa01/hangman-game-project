@@ -21,7 +21,7 @@ let currentWord = ''
 let guessedLetters = []
 let remainingGuesses = maxGuesses
 let winner = false 
-let seperateWord = []
+let seperateLetters = []
 
 // /*------------------------ Cached Element References ------------------------*/
 const lettersbtns = document.querySelectorAll('.letters button')
@@ -42,62 +42,50 @@ const gameSection = document.querySelector('#game')
         winner = false
         
         const { word, hint } = wordsList[Math.floor(Math.random() * wordsList.length)]
-        currentWord = word
-        // console.log(currentWord)   
+        currentWord = word 
         messageEl.textContent = `Hint: ${hint}`
             
-        resetBtn.disabled = true
+        hangmanTemplate.src = './images/hangman background_final.png'
         wordDisplay.innerHTML = '' 
-        seperateWord = word.split('')
-        seperateWord.forEach(letters => {
+        seperateLetters = word.split('')
+        seperateLetters.forEach(letters => {
             const dashes = document.createElement('li')
             dashes.classList.add("letters")
             if (letters !== ' '){
                 dashes.innerText = '_' 
                 dashes.style.width = '50px'
-            } else {
-                    dashes.innerText = ''
-            }
+            } 
                 wordDisplay.appendChild(dashes)
-                // console.log(letters)
             }) 
     
         lettersbtns.forEach((button) => {
             button.disabled = false
             button.style.opacity = '1'
         })
-    
         resetBtn.disabled = true
 }
-    
     
     
     function handleGuesses (event){
     const letterDiv = document.querySelectorAll('.letters')
     const guesses = event.target.textContent
-    // console.log(guessedLetters)
     
     event.target.disabled = true
     event.target.style.opacity = '0.5'
 
     if (guessedLetters.includes(guesses)){
-        // console.log('You already guessed that letter')
         return
     }
     guessedLetters.push(guesses)
     
     if (currentWord.includes(guesses)){
-        seperateWord.forEach((letter, index) => {
+        seperateLetters.forEach((letter, index) => {
             if (letter === guesses){
                 letterDiv[index].innerText = guesses
-                // console.log(index)
-                // console.log('you guessed the right letter!')
             } 
     })
     } else {
-        // console.log('you guessed the wrong letter')
         remainingGuesses--
-        // console.log(`remaining guesses ${remainingGuesses}`)
         let loseAudio = new Audio()
         loseAudio.src = './audio/witch-laugh-189108.mp3'
         loseAudio.volume = '0.3'
@@ -132,12 +120,11 @@ function updateHangman (){
 }
 
 function updateGameStatus() {
-    const allLettersGuessed = seperateWord.every(letter => guessedLetters.includes(letter))
+    const allLettersGuessed = seperateLetters.every(letter => guessedLetters.includes(letter))
     if (allLettersGuessed){
         winner = true
-        messageEl.innerHTML = 'You guessed it right! Coffin is unlocked!'
+        messageEl.innerHTML = 'You guessed it right! You win and coffin is unlocked!'
         resetBtn.disabled = false
-        console.log('you win')
         let winAudio = new Audio()
         winAudio.src = './audio/spooky-gongwav-14904.mp3'
         winAudio.volume = '1'
@@ -145,9 +132,8 @@ function updateGameStatus() {
     }
     if (remainingGuesses === 0) {
         winner = false
-        messageEl.innerHTML = `Game Over! It was <span style="color: #a8b527;">(${currentWord})</span>`
+        messageEl.innerHTML = `Game Over! You lose, it was <span style="color: #a8b527;">(${currentWord})</span>`
         resetBtn.disabled = false
-        // console.log('You lose!')
     }
 }
 
